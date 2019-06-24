@@ -2,7 +2,7 @@
 
 After all changes, the app should look exactly the same as in the beginning.
 
-Refactor the whole application (do not touch JSONParser, json files, and Networking Manager private methods - let's keep it as a Fake Networking Manager which uses json files included in a project. All the remaining parts of Networking Manager can be changed). You can move parts of the code to separate files, create new classes, change architecture, install additional pods via CocoaPods, etc. I realize that the app is really simple, but let's assume this is the beginning of quite a big project.
+Refactor the whole application (please keep Networking Manager as a fake class which loads data from json files after 2 second delay). You can move parts of the code to separate files, create new classes, change architecture, install additional pods via CocoaPods, etc. I realize that the app is really simple, but let's assume this is the beginning of quite a big project.
 
 ## Bugs
 - Details View change background color after a little delay. We would like to have it immediately when a user enters that screen.
@@ -16,4 +16,4 @@ Refactor the whole application (do not touch JSONParser, json files, and Network
 - Improve Table View Controller - every cell should display name and preview underneath. Cell height should be adjusted to the content, so the cells may have different heights.
 
 ## Tests
-- Add unit tests to cover the logic part of the app (you do not need to cover the whole logic, please choose some part of it).
+- Choose few classes and cover them with unit tests.
