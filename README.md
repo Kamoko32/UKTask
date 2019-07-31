@@ -1,19 +1,54 @@
+# **Untitled Kingdom - iOS Recruitment Task**
+
+# Intro
+
+During your holiday, some significant client contacted us to do a project for him. He wanted a simple MVP for now, **but with a plan to grow**. Because there were no experienced developer available, Project Manager decided to start writing the app with a trainee — the results of their work you can find in this repository.
+
+Now you are back, and asked to continue this project. Because the client is aware of the implementation state, he gives the green light to refactor the entire project. As he said at the beginning, the app will grow, so the base for it should be reliable.
+
+Can you save this project? 💪
+
+# Base rules
+
+- **We expect the complete and consistent solution**
+
+- When refactoring, please **keep the way how the app looks like from the user perspective** (excluding the changes we will ask you to do).
+
+- All solutions that are present here are the result of the trainee work, no hidden motive here ;) **You can move any part you want, create new classes, change architecture, install libraries, etc.**
+
+- So far, we are using the hardcoded JSON files instead of server responses. We want to keep it that way for now, but having in mind that it can change in the future.
+
+- We want to **keep the 2 seconds delay for the requests** - to simulate slow connection problems :)
+
 # Tasks
 
-After all changes, the app should look exactly the same as in the beginning.
+To wrap things up, what we want you to do is:
 
-Refactor the whole application (please keep Networking Manager as a fake class which loads data from json files after 2 second delay). You can move parts of the code to separate files, create new classes, change architecture, install additional pods via CocoaPods, etc. I realize that the app is really simple, but let's assume this is the beginning of quite a big project.
+- **Refactor** - it's up to you how much you want to change. The project should be easy to maintain and develop.
 
-## Bugs
-- Details View change background color after a little delay. We would like to have it immediately when a user enters that screen.
-- Details View should also have a title, but it's not displayed at all. The title should be displayed in a specific way, for example, the title "Item1" should be displayed as "ItEm1" (Look at uppercases and lowercases).
-- Going back from Details View moves a user to the initial screen with "Start" button. It's not correct - users should be moved back to Table View Controller.
-- Details View always displays downloaded info for ID = "1".
-- Table View Controller is not going to be deallocated after going back to Start View Controller
+- **Bugfixes:**
 
-## New Features
-- Add another view controller to Tab Bar Controller which displays the same data as a Table View Controller, but using UICollectionView (square cells with assigned background color from data models and label in the center of every cell, two columns). After selecting a specific cell, the app should display details view (that behavior is the same as for the Table View Controller).
-- Improve Table View Controller - every cell should display name and preview underneath. Cell height should be adjusted to the content, so the cells may have different heights.
+    - Details view is changing its background color after a small delay. The client wants it to be correct immediately when a user enters that screen
 
-## Tests
-- Fully cover NetworkingManager and few other classes you select with unit tests.
+    - Details view should have a title displayed on the navigation bar. It should have a specific format: **the characters at the odd indexes should be lowercased, others - uppercased**. Examples: `ItEm123`, `My bEaTiFuL_ItEm`, etc.
+
+    - The back button on the Details view should move the user back to the list, not to the initial screen (with a start button)
+
+    - Details view is always presenting the data for `ID == "1"`, no matter what did user selected
+
+    - It seems that `TableViewController` is not deallocating after going back to the `StartViewController`
+
+
+- **New features:**
+
+    - We want another tab in the Tab Bar Controller, which displays the same data as on the `TableViewController`, but using `UICollectionView`. The screen should present the tiles with a proper background color and the item name centered in the cell. We want it to present 2 square tiles at the row.
+
+    - The `TableViewController` should display the preview underneath the title. Ideally, the cell height should be adjusted to its content.
+
+- **Tests:**
+
+    - Please cover the networking layer with a unit tests (currently placed in `NetworkingManager`)
+    - Please cover with tests some business logic classes too. No need to for 100% coverage in the project, but in the chosen classes, you should try to test possible scenarios.
+
+
+# Good luck! 💪
