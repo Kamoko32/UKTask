@@ -20,6 +20,8 @@ Can you save this project? 💪
 
 - We want to **keep the 2 seconds delay for the requests** - to simulate slow connection problems :)
 
+- Keeping a clean Git history will be additionally scored.
+
 # Tasks
 
 To wrap things up, what we want you to do is:
@@ -32,7 +34,7 @@ To wrap things up, what we want you to do is:
 
     - Details view should have a title displayed on the navigation bar. It should have a specific format: **the characters at the odd indexes should be lowercased, others - uppercased**. Examples: `ItEm123`, `My bEaTiFuL_ItEm`, etc.
 
-    - The back button on the Details view should move the user back to the list, not to the initial screen (with a start button)
+    - The list and details views has 2 navigation bars visible at the same time. We want it to be a single one. The back button on the tab bar level should move user back to the initial screen. Tapping back on the details should move user to the tab bar level (list or collection).
 
     - Details view is always presenting the data for `ID == "1"`, no matter what did user selected
 
