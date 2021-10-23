@@ -3,17 +3,24 @@ import Rswift
 
 class StartCoordinator: Coordinator {
     private let navigationController = UINavigationController()
+    let window: UIWindow
 
-    override init() {
+    init(window: UIWindow) {
+        self.window = window
         super.init()
-        rootViewController = navigationController
     }
 
     override func start() {
         let start = R.storyboard.start.startViewController()!
         start.viewModel.coordinator = self
-        navigationController.viewControllers = [start]
+        window.rootViewController = start
+        window.makeKeyAndVisible()
     }
 
-    func showMenu() {}
+    func showMenu() {
+        let menuCoordinator = MenuCoordinator()
+        menuCoordinator.start()
+        window.rootViewController = menuCoordinator.rootViewController
+        window.makeKeyAndVisible()
+    }
 }

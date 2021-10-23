@@ -10,6 +10,7 @@ class StartViewModel: ViewModel<StartCoordinator> {
             .observeOnMain()
             .subscribe(onNext: { [unowned self] in
                 coordinator?.showMenu()
-            }).disposed(by: bag)
+            })
+            .disposed(by: bag)
     }
 }
