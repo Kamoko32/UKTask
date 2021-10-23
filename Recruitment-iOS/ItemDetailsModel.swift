@@ -8,14 +8,13 @@
 
 import UIKit
 
-struct ItemDetailsModelNetwork: Codable {
-    let name: String
-    let color: String
-    let desc: String
-}
+class ItemDetailsModel: ItemModel {
 
-struct ItemDetailsModel {
-    let name: String
-    let color: UIColor
-    var desc: String
+    var desc:String
+    
+    init(name: String, color: UIColor, desc:String) {
+        self.desc = desc
+        super.init(name: name, color: color)
+    }
+    
 }

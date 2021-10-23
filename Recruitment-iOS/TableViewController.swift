@@ -14,6 +14,8 @@ class TableViewController: UITableViewController, NetworkingManagerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        NetworkingManager.sharedManager.delegate = self
+        NetworkingManager.sharedManager.downloadItems()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -26,6 +26,9 @@ class DetailsViewController: UIViewController, NetworkingManagerDelegate {
         
         self.title = newTitle
         self.view.backgroundColor = tableViewController.itemModels[selectedIndex].color
+        
+        NetworkingManager.sharedManager.delegate = self
+        NetworkingManager.sharedManager.downloadItemWithID("1")
     }
     
     func downloadedItems(_ items: [ItemModel]) {

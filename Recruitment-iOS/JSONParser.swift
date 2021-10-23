@@ -1,20 +1,27 @@
-import Foundation
-import RxSwift
+//
+//  JSONParser.swift
+//  Route1
+//
+//  Created by Paweł Sporysz on 11.12.2015.
+//  Copyright © 2015 Untitled Kingdom. All rights reserved.
+//
 
-enum JSONParserErrors: Error {
-    case noFileWithName(String)
-    case parsingError(String)
-}
+import Foundation
 
 class JSONParser {
-    static func jsonFromFilename<Success: Decodable>(_ filename: String, success: Success.Type) -> Result<Success, JSONParserErrors> {
-        guard let filePath = Bundle.main.url(forResource: filename, withExtension: "json") else { return .failure(.noFileWithName(filename)) }
+    
+    static func jsonFromFilename(_ filename:String) -> [String:AnyObject]? {
+        guard let filepath = Bundle.main.path(forResource: filename, ofType: "") else { return nil }
         do {
-            let data = try Data(contentsOf: filePath)
-            let json = try JSONDecoder().decode(Success.self, from: data)
-            return .success(json)
-        } catch let error {
-            return .failure(.parsingError(error.localizedDescription))
-        }
+            let stringContent = try String(contentsOfFile: filepath, encoding: String.Encoding.utf8)
+            if let data = stringContent.data(using: String.Encoding.utf8) {
+                let dictionary = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions())
+                return dictionary as? [String:AnyObject]
+            } else {
+                return nil
+            }
+        } catch _ {}
+        return nil
     }
+    
 }
