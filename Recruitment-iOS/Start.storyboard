@@ -28,6 +28,9 @@
                             <constraint firstItem="Je6-Yt-8kR" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="OWi-Mc-DpQ"/>
                             <constraint firstItem="Je6-Yt-8kR" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="bBa-Vy-D4H"/>
                         </constraints>
+                        <connections>
+                            <outlet property="startButton" destination="Je6-Yt-8kR" id="9Hh-Ju-mqY"/>
+                        </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

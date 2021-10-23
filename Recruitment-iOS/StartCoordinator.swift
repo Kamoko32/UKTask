@@ -1,4 +1,5 @@
 import UIKit
+import Rswift
 
 class StartCoordinator: Coordinator {
     private let navigationController = UINavigationController()
@@ -9,6 +10,10 @@ class StartCoordinator: Coordinator {
     }
 
     override func start() {
-
+        let start = R.storyboard.start.startViewController()!
+        start.viewModel.coordinator = self
+        navigationController.viewControllers = [start]
     }
+
+    func showMenu() {}
 }

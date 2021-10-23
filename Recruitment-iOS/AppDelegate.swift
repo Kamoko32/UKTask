@@ -12,10 +12,14 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var startCoordinator: StartCoordinator?
 
     func applicationDidFinishLaunching(_ application: UIApplication) {
-        
+        startCoordinator = StartCoordinator()
+        startCoordinator?.start()
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = startCoordinator?.rootViewController
+        window?.makeKeyAndVisible()
     }
-
 }
 

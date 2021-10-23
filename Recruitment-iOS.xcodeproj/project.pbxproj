@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3380FD4273234282C7644284 /* Pods_Recruitment_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CC69739C530DD8D00942943 /* Pods_Recruitment_iOS.framework */; };
 		A4802C381D8ACB320032AF25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4802C321D8ACB320032AF25 /* AppDelegate.swift */; };
-		A4802C391D8ACB320032AF25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4802C331D8ACB320032AF25 /* Main.storyboard */; };
 		A4802C3A1D8ACB320032AF25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4802C341D8ACB320032AF25 /* Assets.xcassets */; };
 		A4802C3B1D8ACB320032AF25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4802C351D8ACB320032AF25 /* LaunchScreen.storyboard */; };
 		A4802C3C1D8ACB320032AF25 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4802C361D8ACB320032AF25 /* TableViewController.swift */; };
@@ -49,7 +48,6 @@
 		A4802C1B1D8ACA5F0032AF25 /* Recruitment-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Recruitment-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4802C2A1D8ACA5F0032AF25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4802C321D8ACB320032AF25 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A4802C331D8ACB320032AF25 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A4802C341D8ACB320032AF25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A4802C351D8ACB320032AF25 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A4802C361D8ACB320032AF25 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
@@ -144,7 +142,6 @@
 				DEF1EFE627248E9A003A26DD /* Utils */,
 				DEF1EFE0272483D1003A26DD /* SupportingFiles */,
 				A4802C2A1D8ACA5F0032AF25 /* Info.plist */,
-				A4802C331D8ACB320032AF25 /* Main.storyboard */,
 				A4802C361D8ACB320032AF25 /* TableViewController.swift */,
 				A4802C371D8ACB320032AF25 /* DetailsViewController.swift */,
 			);
@@ -369,7 +366,6 @@
 				A4802C4B1D8ACB7B0032AF25 /* Item5.json in Resources */,
 				DEF1EFF82724B025003A26DD /* Start.storyboard in Resources */,
 				A4802C3A1D8ACB320032AF25 /* Assets.xcassets in Resources */,
-				A4802C391D8ACB320032AF25 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
