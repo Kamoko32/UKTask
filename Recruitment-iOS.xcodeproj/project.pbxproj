@@ -35,6 +35,11 @@
 		DEF1EFEB27249A0C003A26DD /* ItemsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF1EFEA27249A0C003A26DD /* ItemsMapper.swift */; };
 		DEF1EFED27249B2F003A26DD /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF1EFEC27249B2F003A26DD /* Mapper.swift */; };
 		DEF1EFEF2724A582003A26DD /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF1EFEE2724A582003A26DD /* Client.swift */; };
+		DEF1EFF62724B00F003A26DD /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF1EFF52724B00F003A26DD /* StartView.swift */; };
+		DEF1EFF82724B025003A26DD /* Start.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEF1EFF72724B025003A26DD /* Start.storyboard */; };
+		DEF1EFFA2724B032003A26DD /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF1EFF92724B032003A26DD /* StartViewController.swift */; };
+		DEF1EFFC2724B03C003A26DD /* StartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF1EFFB2724B03C003A26DD /* StartViewModel.swift */; };
+		DEF1EFFE2724B0A5003A26DD /* StartCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF1EFFD2724B0A5003A26DD /* StartCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +75,11 @@
 		DEF1EFEA27249A0C003A26DD /* ItemsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsMapper.swift; sourceTree = "<group>"; };
 		DEF1EFEC27249B2F003A26DD /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
 		DEF1EFEE2724A582003A26DD /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		DEF1EFF52724B00F003A26DD /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		DEF1EFF72724B025003A26DD /* Start.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Start.storyboard; sourceTree = "<group>"; };
+		DEF1EFF92724B032003A26DD /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		DEF1EFFB2724B03C003A26DD /* StartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewModel.swift; sourceTree = "<group>"; };
+		DEF1EFFD2724B0A5003A26DD /* StartCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,16 +132,17 @@
 		A4802C1D1D8ACA5F0032AF25 /* Recruitment-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				DEF1EFE627248E9A003A26DD /* Utils */,
-				DEF1EFE327248DD5003A26DD /* Repositories */,
-				DEF1EFE9272499F6003A26DD /* Mappers */,
-				DEF1EFE227248426003A26DD /* Resources */,
-				DEF1EFE12724840A003A26DD /* Models */,
-				DEF1EFE0272483D1003A26DD /* SupportingFiles */,
-				DEF1EFDD27248377003A26DD /* Extensions */,
 				DEF1EFCE27248225003A26DD /* Base */,
+				DEF1EFDD27248377003A26DD /* Extensions */,
+				DEF1EFF02724AF8D003A26DD /* Flow */,
 				DEF1EFC927246DA9003A26DD /* Generated */,
+				DEF1EFE9272499F6003A26DD /* Mappers */,
+				DEF1EFE12724840A003A26DD /* Models */,
 				A4802C3E1D8ACB6E0032AF25 /* Networking */,
+				DEF1EFE327248DD5003A26DD /* Repositories */,
+				DEF1EFE227248426003A26DD /* Resources */,
+				DEF1EFE627248E9A003A26DD /* Utils */,
+				DEF1EFE0272483D1003A26DD /* SupportingFiles */,
 				A4802C2A1D8ACA5F0032AF25 /* Info.plist */,
 				A4802C331D8ACB320032AF25 /* Main.storyboard */,
 				A4802C361D8ACB320032AF25 /* TableViewController.swift */,
@@ -242,6 +253,50 @@
 			name = Mappers;
 			sourceTree = "<group>";
 		};
+		DEF1EFF02724AF8D003A26DD /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				DEF1EFF12724AFA2003A26DD /* Start */,
+				DEF1EFF22724AFB2003A26DD /* Menu */,
+			);
+			name = Flow;
+			sourceTree = "<group>";
+		};
+		DEF1EFF12724AFA2003A26DD /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				DEF1EFF72724B025003A26DD /* Start.storyboard */,
+				DEF1EFF52724B00F003A26DD /* StartView.swift */,
+				DEF1EFF92724B032003A26DD /* StartViewController.swift */,
+				DEF1EFFB2724B03C003A26DD /* StartViewModel.swift */,
+				DEF1EFFD2724B0A5003A26DD /* StartCoordinator.swift */,
+			);
+			name = Start;
+			sourceTree = "<group>";
+		};
+		DEF1EFF22724AFB2003A26DD /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				DEF1EFF32724AFC5003A26DD /* List */,
+				DEF1EFF42724AFCB003A26DD /* Details */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		DEF1EFF32724AFC5003A26DD /* List */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = List;
+			sourceTree = "<group>";
+		};
+		DEF1EFF42724AFCB003A26DD /* Details */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Details;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -312,6 +367,7 @@
 				A4802C481D8ACB7B0032AF25 /* Item2.json in Resources */,
 				A4802C4A1D8ACB7B0032AF25 /* Item4.json in Resources */,
 				A4802C4B1D8ACB7B0032AF25 /* Item5.json in Resources */,
+				DEF1EFF82724B025003A26DD /* Start.storyboard in Resources */,
 				A4802C3A1D8ACB320032AF25 /* Assets.xcassets in Resources */,
 				A4802C391D8ACB320032AF25 /* Main.storyboard in Resources */,
 			);
@@ -398,10 +454,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4802C381D8ACB320032AF25 /* AppDelegate.swift in Sources */,
+				DEF1EFF62724B00F003A26DD /* StartView.swift in Sources */,
 				DEF1EFDF2724838C003A26DD /* Observable+Queue.swift in Sources */,
+				DEF1EFFE2724B0A5003A26DD /* StartCoordinator.swift in Sources */,
 				DEF1EFE827248EA6003A26DD /* Repository.swift in Sources */,
 				DEF1EFEB27249A0C003A26DD /* ItemsMapper.swift in Sources */,
+				DEF1EFFA2724B032003A26DD /* StartViewController.swift in Sources */,
 				A4802C511D8ACB840032AF25 /* JSONParser.swift in Sources */,
+				DEF1EFFC2724B03C003A26DD /* StartViewModel.swift in Sources */,
 				A4802C3C1D8ACB320032AF25 /* TableViewController.swift in Sources */,
 				DEF1EFCD27246F5A003A26DD /* R.generated.swift in Sources */,
 				DEF1EFD627248305003A26DD /* RxViewController.swift in Sources */,
