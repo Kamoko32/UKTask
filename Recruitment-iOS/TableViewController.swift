@@ -1,40 +1,37 @@
-//
-//  TableViewController.swift
-//  UKiOSTest
-//
-//  Created by Paweł Sporysz on 15.09.2016.
-//  Copyright © 2016 Paweł Sporysz. All rights reserved.
-//
-
 import UIKit
 
-class TableViewController: UITableViewController, NetworkingManagerDelegate {
-    
-    var itemModels:[ItemModel] = []
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+class TableViewController: RxViewController<TableView> {
+
+    let viewModel = TableViewModel()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        addBackButton()
+        setupBindings()
+        self.title = "List"
     }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return itemModels.count
+
+    private func setupBindings() {
+        viewModel.items
+            .bind(to: customView.tableView.rx.items(
+                cellIdentifier: R.reuseIdentifier.tableViewCell.identifier,
+                cellType: TableViewCell.self)
+            ) { _, item, cell in
+                cell.setup(item: item)
+            }.disposed(by: bag)
+
+        customView.tableView.rx.modelSelected(ItemModel.self)
+            .bind(to: viewModel.showDetails)
+            .disposed(by: bag)
+
+        viewModel.isDownloading.observeOnMain()
+            .subscribe(onNext: { [weak self] isDownloading in
+                isDownloading ? self?.showIndicator() : self?.hideIndicator()
+            }).disposed(by: bag)
     }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CellID", for: indexPath)
-        let itemModel = itemModels[indexPath.row]
-        cell.backgroundColor = itemModel.color
-        cell.textLabel?.text = itemModel.name
-        return cell
+
+    private func addBackButton() {
+        let backButton = UIBarButtonItem(title: "Back", style: .plain, target: self, action: nil)
+        navigationItem.leftBarButtonItem = backButton
     }
-    
-    func downloadedItems(_ items: [ItemModel]) {
-        self.itemModels = items
-        self.tableView.reloadData()
-    }
-    
-    func downloadedItemDetails(_ itemDetails: ItemDetailsModel) {
-        
-    }
-    
 }

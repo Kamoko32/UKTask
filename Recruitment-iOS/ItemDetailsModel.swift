@@ -1,20 +1,21 @@
-//
-//  ItemDetailsModel.swift
-//  UKiOSTest
-//
-//  Created by Paweł Sporysz on 15.09.2016.
-//  Copyright © 2016 Paweł Sporysz. All rights reserved.
-//
-
 import UIKit
+struct ItemDetailsJSON: Codable {
+    let data: ItemDetailsModelJSON
+}
 
-struct ItemDetailsModelNetwork: Codable {
-    let name: String
-    let color: String
-    let desc: String
+struct ItemDetailsModelJSON: Codable {
+    struct Attributes: Codable {
+        let name: String
+        let color: String
+        let desc: String
+    }
+    let id: String
+    let type: String
+    let attributes: Attributes
 }
 
 struct ItemDetailsModel {
+    let id: Int
     let name: String
     let color: UIColor
     var desc: String

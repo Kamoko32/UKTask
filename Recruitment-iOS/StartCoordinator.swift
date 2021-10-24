@@ -19,6 +19,7 @@ class StartCoordinator: Coordinator {
 
     func showMenu() {
         let menuCoordinator = MenuCoordinator()
+        childCoordinators.append(menuCoordinator)
         menuCoordinator.start()
         window.rootViewController = menuCoordinator.rootViewController
         window.makeKeyAndVisible()
