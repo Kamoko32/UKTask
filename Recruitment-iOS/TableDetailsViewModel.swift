@@ -2,6 +2,7 @@ import RxSwift
 import RxCocoa
 
 class TableDetailsViewModel: ViewModel<TableViewCoordinator> {
+    let isDownloading = BehaviorRelay<Bool>(value: true)
     let description = BehaviorRelay<String>(value: "")
     let name = BehaviorRelay<String>(value: "")
     let backgroundColor = BehaviorRelay<UIColor>(value: .white)
@@ -29,6 +30,11 @@ class TableDetailsViewModel: ViewModel<TableViewCoordinator> {
                 return newTitle
             }
             .bind(to: name)
+            .disposed(by: bag)
+
+        details
+            .mapTo(false)
+            .bind(to: isDownloading)
             .disposed(by: bag)
     }
 }

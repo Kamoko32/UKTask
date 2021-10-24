@@ -23,6 +23,11 @@ class TableViewController: RxViewController<TableView> {
         customView.tableView.rx.modelSelected(ItemModel.self)
             .bind(to: viewModel.showDetails)
             .disposed(by: bag)
+
+        viewModel.isDownloading.observeOnMain()
+            .subscribe(onNext: { [weak self] isDownloading in
+                isDownloading ? self?.showIndicator() : self?.hideIndicator()
+            }).disposed(by: bag)
     }
 
     private func addBackButton() {

@@ -22,5 +22,10 @@ class TableDetailsViewController: RxViewController<TableDetailsView> {
         viewModel.backgroundColor
             .bind(to: customView.rx.backgroundColor)
             .disposed(by: bag)
+
+        viewModel.isDownloading.observeOnMain()
+            .subscribe(onNext: { [weak self] isDownloading in
+                isDownloading ? self?.showIndicator() : self?.hideIndicator()
+            }).disposed(by: bag)
     }
 }
