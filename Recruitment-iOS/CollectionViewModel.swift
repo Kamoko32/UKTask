@@ -1,0 +1,29 @@
+import Foundation
+import RxCocoa
+import RxSwift
+import RxSwiftExt
+
+class CollectionViewModel: ViewModel<CollectionViewCoordinator> {
+    let isDownloading = BehaviorRelay<Bool>(value: true)
+    let items = BehaviorRelay<[ItemModel]>(value: [])
+    let showDetails = PublishRelay<ItemModel>()
+
+    override func setupBindings() {
+        let networkItems = apiClient.itemsRepository.getItems().share()
+
+        networkItems
+            .mapTo(false)
+            .bind(to: isDownloading)
+            .disposed(by: bag)
+
+        networkItems
+            .bind(to: items)
+            .disposed(by: bag)
+
+//        showDetails
+//            .observeOnMain()
+//            .subscribe(onNext: { [unowned self] in
+//                coordinator?.showDetails(id: $0.id, color: $0.color)
+//            }).disposed(by: bag)
+    }
+}
