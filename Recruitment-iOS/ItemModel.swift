@@ -19,4 +19,5 @@ struct ItemModel {
     let id: Int
     let name: String
     let color: UIColor
+    let preview: String
 }

@@ -9,6 +9,5 @@ class TableView: UIView {
     }
 
     private func setTheme() {
-        tableView.allowsSelection = false
     }
 }

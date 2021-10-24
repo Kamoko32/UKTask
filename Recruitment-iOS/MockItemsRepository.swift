@@ -3,7 +3,7 @@ import RxSwift
 
 protocol ItemsRepository {
     func getItems() -> Observable<[ItemModel]>
-    func getItemWithID(id: Int) -> Observable<ItemDetailsModel>
+    func getItemDetails(id: Int) -> Observable<ItemDetailsModel>
 }
 
 class MockItemsRepository: Repository, ItemsRepository {
@@ -25,8 +25,8 @@ class MockItemsRepository: Repository, ItemsRepository {
             }
     }
 
-    func getItemWithID(id: Int) -> Observable<ItemDetailsModel> {
-        networkingManager.runMockRequest(fileName: "Item\(id)", success: ItemDetailsModelNetwork.self)
+    func getItemDetails(id: Int) -> Observable<ItemDetailsModel> {
+        networkingManager.runMockRequest(fileName: "Item\(id)", success: ItemDetailsJSON.self)
             .map { [weak self] result in
                 do {
                     if let mappedData = try self?.mapper.mapDetails(result) {

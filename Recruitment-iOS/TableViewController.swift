@@ -13,15 +13,18 @@ class TableViewController: RxViewController<TableView> {
 
     private func setupBindings() {
         viewModel.items
-            .observeOnMain()
             .bind(to: customView.tableView.rx.items(cellIdentifier: R.reuseIdentifier.itemCell.identifier)) { _, item, cell in
-            cell.backgroundColor = item.color
-            cell.textLabel?.text = item.name
-        }.disposed(by: bag)
+                cell.backgroundColor = item.color
+                cell.textLabel?.text = item.name
+            }.disposed(by: bag)
+
+        customView.tableView.rx.modelSelected(ItemModel.self)
+            .bind(to: viewModel.showDetails)
+            .disposed(by: bag)
     }
 
     private func addBackButton() {
         let backButton = UIBarButtonItem(title: "Back", style: .plain, target: self, action: nil)
-        self.navigationItem.leftBarButtonItem = backButton
+        navigationItem.leftBarButtonItem = backButton
     }
 }

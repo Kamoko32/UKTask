@@ -13,4 +13,12 @@ class TableViewCoordinator: Coordinator {
         tableViewController.viewModel.coordinator = self
         navigationController.viewControllers = [tableViewController]
     }
+
+    func showDetails(id: Int, color: UIColor) {
+        let details = R.storyboard.tableDetails.tableDetailsViewController()!
+        details.viewModel.coordinator = self
+        details.viewModel.backgroundColor.accept(color)
+        details.viewModel.getDetails.accept(id)
+        navigationController.pushViewController(details, animated: true)
+    }
 }
