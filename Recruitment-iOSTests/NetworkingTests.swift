@@ -26,8 +26,12 @@ class NetworkingTests: XCTestCase {
         let items = scheduler.createObserver(String.self)
 
         networkingManager.runMockRequest(fileName: "Items", success: ItemsJSON.self)
-            .subscribe(onNext: { _ in
-                items.onNext("Success")
+            .subscribe({ event in
+                switch event {
+                    case .next(_):
+                    items.onNext("Success")
+                    default: break
+                }
             })
             .disposed(by: bag)
 
@@ -38,9 +42,13 @@ class NetworkingTests: XCTestCase {
     func test_fetch_error() {
         let errorMessage = scheduler.createObserver(String.self)
 
-        networkingManager.runMockRequest(fileName: "Items-Incorrect", success: ItemsJSON.self)
-            .subscribe(onError: { error in
-                errorMessage.onNext("Failure")
+        networkingManager.runMockRequest(fileName: "ItemsIncorrectName", success: ItemModelJSON.self)
+            .subscribe({ event in
+                switch event {
+                    case .error(_):
+                    errorMessage.onNext("Failure")
+                    default: break
+                }
             })
             .disposed(by: bag)
 
@@ -51,10 +59,14 @@ class NetworkingTests: XCTestCase {
     func test_fetch_no_file_with_name_error() {
         let errorMessage = scheduler.createObserver(JSONParserErrors.self)
 
-        networkingManager.runMockRequest(fileName: "Items-Incorrect", success: ItemsJSON.self)
-            .subscribe(onError: { error in
-                if let error = error as? JSONParserErrors {
-                    errorMessage.onNext(error)
+        networkingManager.runMockRequest(fileName: "ItemsIncorrectName", success: ItemsJSON.self)
+            .subscribe({ event in
+                switch event {
+                    case .error(let error):
+                        if let error = error as? JSONParserErrors {
+                            errorMessage.onNext(error)
+                        }
+                    default: break
                 }
             })
             .disposed(by: bag)
@@ -67,9 +79,13 @@ class NetworkingTests: XCTestCase {
         let errorMessage = scheduler.createObserver(JSONParserErrors.self)
 
         networkingManager.runMockRequest(fileName: "Items", success: ItemModelJSON.self)
-            .subscribe(onError: { error in
-                if let error = error as? JSONParserErrors {
-                    errorMessage.onNext(error)
+            .subscribe({ event in
+                switch event {
+                    case .error(let error):
+                        if let error = error as? JSONParserErrors {
+                            errorMessage.onNext(error)
+                        }
+                    default: break
                 }
             })
             .disposed(by: bag)

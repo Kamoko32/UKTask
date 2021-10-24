@@ -51,25 +51,22 @@ class DetailsViewModelTests: XCTestCase {
     }
 
     func test_name_formatter() {
-        let name = scheduler.createObserver(String.self)
-        var formattedName = ""
+        var testPassed = true
 
         viewModel.getDetails.accept(1)
 
         viewModel.name
-            .bind(to: name)
-            .disposed(by: bag)
-
-        viewModel.name
             .subscribe(onNext: { value in
-                var newTitle = ""
-                for (index, letter) in value.enumerated() {
-                    newTitle += index % 2 == 0 ? letter.uppercased() : letter.lowercased()
+                for (index, letter) in value.enumerated() where letter.isLetter {
+                    let isValid = index % 2 == 0 ? letter.isUppercase : letter.isLowercase
+                    if !isValid {
+                        testPassed = false
+                        break
+                    }
                 }
-                formattedName = newTitle
             }).disposed(by: bag)
 
         _ = XCTWaiter.wait(for: [expectation(description: "Wait for 2 seconds")], timeout: 2.0)
-        XCTAssertEqual(name.events.last?.value.element, formattedName)
+        XCTAssertTrue(testPassed)
     }
 }

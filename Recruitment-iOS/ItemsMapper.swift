@@ -8,7 +8,7 @@ protocol ItemsMapper {
 
 class MockItemsMapper: ItemsMapper {
     func map(_ input: ItemModelJSON) throws -> ItemModel {
-        guard let intID = Int(input.id) else { throw DataMapperErrors.mapError("Couldnt format String to Int") }
+        guard let intID = Int(input.id) else { throw DataMapperErrors.mapError("Couldn't format String to Int") }
         return .init(
             id: intID,
             name: input.attributes.name,
@@ -18,7 +18,7 @@ class MockItemsMapper: ItemsMapper {
     }
 
     func mapDetails(_ input: ItemDetailsJSON) throws -> ItemDetailsModel {
-        guard let intID = Int(input.data.id) else { throw DataMapperErrors.mapError("Couldnt format String to Int") }
+        guard let intID = Int(input.data.id) else { throw DataMapperErrors.mapError("Couldn't format String to Int") }
         return .init(
             id: intID,
             name: input.data.attributes.name,
