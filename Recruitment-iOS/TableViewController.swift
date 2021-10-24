@@ -13,9 +13,11 @@ class TableViewController: RxViewController<TableView> {
 
     private func setupBindings() {
         viewModel.items
-            .bind(to: customView.tableView.rx.items(cellIdentifier: R.reuseIdentifier.itemCell.identifier)) { _, item, cell in
-                cell.backgroundColor = item.color
-                cell.textLabel?.text = item.name
+            .bind(to: customView.tableView.rx.items(
+                cellIdentifier: R.reuseIdentifier.tableViewCell.identifier,
+                cellType: TableViewCell.self)
+            ) { _, item, cell in
+                cell.setup(item: item)
             }.disposed(by: bag)
 
         customView.tableView.rx.modelSelected(ItemModel.self)

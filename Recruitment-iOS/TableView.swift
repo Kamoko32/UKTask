@@ -5,9 +5,10 @@ class TableView: UIView {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        setTheme()
+        setupTableView()
     }
 
-    private func setTheme() {
+    private func setupTableView() {
+        tableView.register(R.nib.tableViewCell)
     }
 }

@@ -21,6 +21,13 @@ class TableDetailsViewModel: ViewModel<TableViewCoordinator> {
 
         details
             .mapAt(\.name)
+            .map { name in
+                var newTitle = ""
+                for (index, letter) in name.enumerated() {
+                    newTitle += index % 2 == 0 ? letter.lowercased() : letter.uppercased()
+                }
+                return newTitle
+            }
             .bind(to: name)
             .disposed(by: bag)
     }

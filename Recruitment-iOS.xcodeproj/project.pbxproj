@@ -37,6 +37,8 @@
 		DE8EB8202724DF4E008C00A9 /* TableDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8EB81F2724DF4E008C00A9 /* TableDetailsView.swift */; };
 		DE8EB8222724DF83008C00A9 /* TableDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8EB8212724DF83008C00A9 /* TableDetailsViewController.swift */; };
 		DE8EB8242724DFB6008C00A9 /* TableDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8EB8232724DFB6008C00A9 /* TableDetailsViewModel.swift */; };
+		DEB6FB992724F28900E3A780 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB6FB982724F28900E3A780 /* TableViewCell.swift */; };
+		DEB6FB9B2724F2AB00E3A780 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEB6FB9A2724F2AB00E3A780 /* TableViewCell.xib */; };
 		DEF1EFCD27246F5A003A26DD /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF1EFCC27246F5A003A26DD /* R.generated.swift */; };
 		DEF1EFD4272482B0003A26DD /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF1EFD3272482B0003A26DD /* Coordinator.swift */; };
 		DEF1EFD627248305003A26DD /* RxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF1EFD527248305003A26DD /* RxViewController.swift */; };
@@ -90,6 +92,8 @@
 		DE8EB81F2724DF4E008C00A9 /* TableDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDetailsView.swift; sourceTree = "<group>"; };
 		DE8EB8212724DF83008C00A9 /* TableDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDetailsViewController.swift; sourceTree = "<group>"; };
 		DE8EB8232724DFB6008C00A9 /* TableDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDetailsViewModel.swift; sourceTree = "<group>"; };
+		DEB6FB982724F28900E3A780 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		DEB6FB9A2724F2AB00E3A780 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		DEF1EFCC27246F5A003A26DD /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = R.generated.swift; path = Generated/R.generated.swift; sourceTree = "<group>"; };
 		DEF1EFD3272482B0003A26DD /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		DEF1EFD527248305003A26DD /* RxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxViewController.swift; sourceTree = "<group>"; };
@@ -226,12 +230,22 @@
 		DE5F01662724C7AC004A6E11 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				DE6176192724F4BA00E58CEA /* Cell */,
 				DE5F015E2724C5E0004A6E11 /* Table.storyboard */,
 				DE5F01622724C710004A6E11 /* TableView.swift */,
 				DE5F01642724C75B004A6E11 /* TableViewModel.swift */,
 				DE5F01602724C6B3004A6E11 /* TableViewController.swift */,
 			);
 			name = List;
+			sourceTree = "<group>";
+		};
+		DE6176192724F4BA00E58CEA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DEB6FB982724F28900E3A780 /* TableViewCell.swift */,
+				DEB6FB9A2724F2AB00E3A780 /* TableViewCell.xib */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 		DE8EB81C2724DE99008C00A9 /* Details */ = {
@@ -427,6 +441,7 @@
 				A4802C461D8ACB7B0032AF25 /* Items.json in Resources */,
 				A4802C491D8ACB7B0032AF25 /* Item3.json in Resources */,
 				DE8EB81E2724DF04008C00A9 /* TableDetails.storyboard in Resources */,
+				DEB6FB9B2724F2AB00E3A780 /* TableViewCell.xib in Resources */,
 				A4802C3B1D8ACB320032AF25 /* LaunchScreen.storyboard in Resources */,
 				A4802C481D8ACB7B0032AF25 /* Item2.json in Resources */,
 				DE5F015B2724BD73004A6E11 /* Menu.storyboard in Resources */,
@@ -549,6 +564,7 @@
 				A4802C501D8ACB840032AF25 /* ItemModel.swift in Sources */,
 				DEF1EFD827248313003A26DD /* RxView.swift in Sources */,
 				DE5F014D2724BA00004A6E11 /* MenuTab.swift in Sources */,
+				DEB6FB992724F28900E3A780 /* TableViewCell.swift in Sources */,
 				DEF1EFDA2724831F003A26DD /* ViewModel.swift in Sources */,
 				DEF1EFD4272482B0003A26DD /* Coordinator.swift in Sources */,
 			);
