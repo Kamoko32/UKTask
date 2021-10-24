@@ -2,10 +2,12 @@ import Foundation
 import UIKit
 
 class MockItemsMapper: DataMapper {
-    func map(_ input: ItemModelNetwork) throws -> ItemModel {
-        .init(
-            name: input.name,
-            color: mapStringToUIColor(input: input.color)
+    func map(_ input: ItemModelJSON) throws -> ItemModel {
+        guard let intID = Int(input.id) else { throw DataMapperErrors.mapError("Couldnt format String to Int") }
+        return .init(
+            id: intID,
+            name: input.attributes.name,
+            color: mapStringToUIColor(input: input.attributes.color)
         )
     }
 

@@ -11,8 +11,6 @@
 		A4802C381D8ACB320032AF25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4802C321D8ACB320032AF25 /* AppDelegate.swift */; };
 		A4802C3A1D8ACB320032AF25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4802C341D8ACB320032AF25 /* Assets.xcassets */; };
 		A4802C3B1D8ACB320032AF25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4802C351D8ACB320032AF25 /* LaunchScreen.storyboard */; };
-		A4802C3C1D8ACB320032AF25 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4802C361D8ACB320032AF25 /* TableViewController.swift */; };
-		A4802C3D1D8ACB320032AF25 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4802C371D8ACB320032AF25 /* DetailsViewController.swift */; };
 		A4802C461D8ACB7B0032AF25 /* Items.json in Resources */ = {isa = PBXBuildFile; fileRef = A4802C401D8ACB7B0032AF25 /* Items.json */; };
 		A4802C471D8ACB7B0032AF25 /* Item1.json in Resources */ = {isa = PBXBuildFile; fileRef = A4802C411D8ACB7B0032AF25 /* Item1.json */; };
 		A4802C481D8ACB7B0032AF25 /* Item2.json in Resources */ = {isa = PBXBuildFile; fileRef = A4802C421D8ACB7B0032AF25 /* Item2.json */; };
@@ -31,6 +29,10 @@
 		DE5F01592724BCDF004A6E11 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F01582724BCDF004A6E11 /* CollectionView.swift */; };
 		DE5F015B2724BD73004A6E11 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE5F015A2724BD73004A6E11 /* Menu.storyboard */; };
 		DE5F015D2724BDA4004A6E11 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F015C2724BDA4004A6E11 /* MenuViewController.swift */; };
+		DE5F015F2724C5E0004A6E11 /* Table.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE5F015E2724C5E0004A6E11 /* Table.storyboard */; };
+		DE5F01612724C6B3004A6E11 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F01602724C6B3004A6E11 /* TableViewController.swift */; };
+		DE5F01632724C710004A6E11 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F01622724C710004A6E11 /* TableView.swift */; };
+		DE5F01652724C75B004A6E11 /* TableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5F01642724C75B004A6E11 /* TableViewModel.swift */; };
 		DEF1EFCD27246F5A003A26DD /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF1EFCC27246F5A003A26DD /* R.generated.swift */; };
 		DEF1EFD4272482B0003A26DD /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF1EFD3272482B0003A26DD /* Coordinator.swift */; };
 		DEF1EFD627248305003A26DD /* RxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF1EFD527248305003A26DD /* RxViewController.swift */; };
@@ -58,8 +60,6 @@
 		A4802C321D8ACB320032AF25 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4802C341D8ACB320032AF25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A4802C351D8ACB320032AF25 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A4802C361D8ACB320032AF25 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		A4802C371D8ACB320032AF25 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		A4802C401D8ACB7B0032AF25 /* Items.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Items.json; sourceTree = "<group>"; };
 		A4802C411D8ACB7B0032AF25 /* Item1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Item1.json; sourceTree = "<group>"; };
 		A4802C421D8ACB7B0032AF25 /* Item2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Item2.json; sourceTree = "<group>"; };
@@ -78,6 +78,10 @@
 		DE5F01582724BCDF004A6E11 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		DE5F015A2724BD73004A6E11 /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		DE5F015C2724BDA4004A6E11 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		DE5F015E2724C5E0004A6E11 /* Table.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Table.storyboard; sourceTree = "<group>"; };
+		DE5F01602724C6B3004A6E11 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		DE5F01622724C710004A6E11 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
+		DE5F01642724C75B004A6E11 /* TableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewModel.swift; sourceTree = "<group>"; };
 		DEF1EFCC27246F5A003A26DD /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = R.generated.swift; path = Generated/R.generated.swift; sourceTree = "<group>"; };
 		DEF1EFD3272482B0003A26DD /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		DEF1EFD527248305003A26DD /* RxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxViewController.swift; sourceTree = "<group>"; };
@@ -158,8 +162,6 @@
 				DEF1EFE627248E9A003A26DD /* Utils */,
 				DEF1EFE0272483D1003A26DD /* SupportingFiles */,
 				A4802C2A1D8ACA5F0032AF25 /* Info.plist */,
-				A4802C361D8ACB320032AF25 /* TableViewController.swift */,
-				A4802C371D8ACB320032AF25 /* DetailsViewController.swift */,
 			);
 			path = "Recruitment-iOS";
 			sourceTree = "<group>";
@@ -167,7 +169,6 @@
 		A4802C3E1D8ACB6E0032AF25 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				A4802C4D1D8ACB840032AF25 /* JSONParser.swift */,
 				A4802C4E1D8ACB840032AF25 /* NetworkingManager.swift */,
 			);
 			name = Networking;
@@ -199,6 +200,7 @@
 		DE5F01502724BB9B004A6E11 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
+				DE5F01662724C7AC004A6E11 /* List */,
 				DE5F01552724BC83004A6E11 /* TableViewCoordinator.swift */,
 			);
 			name = TableView;
@@ -210,6 +212,17 @@
 				DE5F01582724BCDF004A6E11 /* CollectionView.swift */,
 			);
 			name = CollectionView;
+			sourceTree = "<group>";
+		};
+		DE5F01662724C7AC004A6E11 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				DE5F015E2724C5E0004A6E11 /* Table.storyboard */,
+				DE5F01622724C710004A6E11 /* TableView.swift */,
+				DE5F01642724C75B004A6E11 /* TableViewModel.swift */,
+				DE5F01602724C6B3004A6E11 /* TableViewController.swift */,
+			);
+			name = List;
 			sourceTree = "<group>";
 		};
 		DEF1EFC927246DA9003A26DD /* Generated */ = {
@@ -277,6 +290,7 @@
 		DEF1EFE627248E9A003A26DD /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				A4802C4D1D8ACB840032AF25 /* JSONParser.swift */,
 				DEF1EFE727248EA6003A26DD /* Repository.swift */,
 				DEF1EFEC27249B2F003A26DD /* Mapper.swift */,
 				DEF1EFEE2724A582003A26DD /* Client.swift */,
@@ -308,8 +322,8 @@
 			children = (
 				DEF1EFF72724B025003A26DD /* Start.storyboard */,
 				DEF1EFF52724B00F003A26DD /* StartView.swift */,
-				DEF1EFF92724B032003A26DD /* StartViewController.swift */,
 				DEF1EFFB2724B03C003A26DD /* StartViewModel.swift */,
+				DEF1EFF92724B032003A26DD /* StartViewController.swift */,
 				DEF1EFFD2724B0A5003A26DD /* StartCoordinator.swift */,
 			);
 			name = Start;
@@ -396,6 +410,7 @@
 				A4802C481D8ACB7B0032AF25 /* Item2.json in Resources */,
 				DE5F015B2724BD73004A6E11 /* Menu.storyboard in Resources */,
 				A4802C4A1D8ACB7B0032AF25 /* Item4.json in Resources */,
+				DE5F015F2724C5E0004A6E11 /* Table.storyboard in Resources */,
 				A4802C4B1D8ACB7B0032AF25 /* Item5.json in Resources */,
 				DEF1EFF82724B025003A26DD /* Start.storyboard in Resources */,
 				A4802C3A1D8ACB320032AF25 /* Assets.xcassets in Resources */,
@@ -483,6 +498,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4802C381D8ACB320032AF25 /* AppDelegate.swift in Sources */,
+				DE5F01632724C710004A6E11 /* TableView.swift in Sources */,
 				DE5F014F2724BAED004A6E11 /* MenuCoordinator.swift in Sources */,
 				DE5F01592724BCDF004A6E11 /* CollectionView.swift in Sources */,
 				DEF1EFF62724B00F003A26DD /* StartView.swift in Sources */,
@@ -491,11 +507,12 @@
 				DEF1EFE827248EA6003A26DD /* Repository.swift in Sources */,
 				DEF1EFEB27249A0C003A26DD /* ItemsMapper.swift in Sources */,
 				DEF1EFFA2724B032003A26DD /* StartViewController.swift in Sources */,
+				DE5F01612724C6B3004A6E11 /* TableViewController.swift in Sources */,
 				DE5F015D2724BDA4004A6E11 /* MenuViewController.swift in Sources */,
 				A4802C511D8ACB840032AF25 /* JSONParser.swift in Sources */,
 				DEF1EFFC2724B03C003A26DD /* StartViewModel.swift in Sources */,
+				DE5F01652724C75B004A6E11 /* TableViewModel.swift in Sources */,
 				DE5F01542724BC51004A6E11 /* CollectionViewTabCoordinator.swift in Sources */,
-				A4802C3C1D8ACB320032AF25 /* TableViewController.swift in Sources */,
 				DEF1EFCD27246F5A003A26DD /* R.generated.swift in Sources */,
 				DEF1EFD627248305003A26DD /* RxViewController.swift in Sources */,
 				DEF1EFEF2724A582003A26DD /* Client.swift in Sources */,
@@ -506,7 +523,6 @@
 				DEF1EFE527248DF3003A26DD /* MockItemsRepository.swift in Sources */,
 				DE5F01562724BC83004A6E11 /* TableViewCoordinator.swift in Sources */,
 				A4802C501D8ACB840032AF25 /* ItemModel.swift in Sources */,
-				A4802C3D1D8ACB320032AF25 /* DetailsViewController.swift in Sources */,
 				DEF1EFD827248313003A26DD /* RxView.swift in Sources */,
 				DE5F014D2724BA00004A6E11 /* MenuTab.swift in Sources */,
 				DEF1EFDA2724831F003A26DD /* ViewModel.swift in Sources */,

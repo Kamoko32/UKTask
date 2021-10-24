@@ -14,10 +14,10 @@ class MockItemsRepository: Repository, ItemsRepository {
     }
 
     func getItems() -> Observable<[ItemModel]> {
-        networkingManager.runMockRequest(fileName: "Items.json", success: [ItemModelNetwork].self)
+        networkingManager.runMockRequest(fileName: "Items", success: ItemsJSON.self)
             .map { [weak self] result in
                 do {
-                    let mappedData = try result.compactMap { try self?.mapper.map($0) }
+                    let mappedData = try result.data.compactMap { try self?.mapper.map($0) }
                     return mappedData
                 } catch let error {
                     throw DataMapperErrors.mapError(error.localizedDescription)
@@ -26,7 +26,7 @@ class MockItemsRepository: Repository, ItemsRepository {
     }
 
     func getItemWithID(id: Int) -> Observable<ItemDetailsModel> {
-        networkingManager.runMockRequest(fileName: "Item\(id).json", success: ItemDetailsModelNetwork.self)
+        networkingManager.runMockRequest(fileName: "Item\(id)", success: ItemDetailsModelNetwork.self)
             .map { [weak self] result in
                 do {
                     if let mappedData = try self?.mapper.mapDetails(result) {
