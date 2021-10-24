@@ -1,11 +1,6 @@
 import UIKit
 import RxSwift
 
-protocol NetworkingManagerDelegate {
-    func downloadedItems(_ items:[ItemModel])
-    func downloadedItemDetails(_ itemDetails:ItemDetailsModel)
-}
-
 class NetworkingManager: NSObject {
     static var sharedManager = NetworkingManager()
 

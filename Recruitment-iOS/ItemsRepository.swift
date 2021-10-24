@@ -2,14 +2,15 @@ import Foundation
 import RxSwift
 
 protocol ItemsRepository {
+    var mapper: ItemsMapper { get set }
     func getItems() -> Observable<[ItemModel]>
     func getItemDetails(id: Int) -> Observable<ItemDetailsModel>
 }
 
 class MockItemsRepository: Repository, ItemsRepository {
-    let mapper: MockItemsMapper
+    var mapper: ItemsMapper
 
-    init(mapper: MockItemsMapper) {
+    init(mapper: ItemsMapper) {
         self.mapper = mapper
     }
 

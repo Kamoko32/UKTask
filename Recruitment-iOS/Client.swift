@@ -6,6 +6,5 @@ protocol Client {
 
 class ApiClient: Client {
     static var shared = ApiClient()
-
     var itemsRepository: ItemsRepository = MockItemsRepository(mapper: MockItemsMapper())
 }

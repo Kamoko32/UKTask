@@ -3,10 +3,10 @@ import RxCocoa
 import RxSwift
 
 class StartViewModel: ViewModel<StartCoordinator> {
-    let startTapped = PublishRelay<Void>()
+    let start = PublishRelay<Void>()
 
     override func setupBindings() {
-        startTapped
+        start
             .observeOnMain()
             .subscribe(onNext: { [unowned self] in
                 coordinator?.showMenu()

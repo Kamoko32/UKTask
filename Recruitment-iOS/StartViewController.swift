@@ -12,7 +12,7 @@ class StartViewController: RxViewController<StartView> {
 
     private func setupBindings() {
         customView.startButton.rx.tap
-            .bind(to: viewModel.startTapped)
+            .bind(to: viewModel.start)
             .disposed(by: bag)
     }
 }
