@@ -1,6 +1,6 @@
 import UIKit
 
-class TableViewCoordinator: Coordinator {
+class CollectionViewCoordinator: Coordinator {
     private let navigationController = UINavigationController()
 
     override init() {
@@ -9,9 +9,9 @@ class TableViewCoordinator: Coordinator {
     }
 
     override func start() {
-        let tableViewController = R.storyboard.table.tableViewController()!
-        tableViewController.viewModel.coordinator = self
-        navigationController.viewControllers = [tableViewController]
+        let collectionViewController = R.storyboard.collection.collectionViewController()!
+        collectionViewController.viewModel.coordinator = self
+        navigationController.viewControllers = [collectionViewController]
     }
 
     func showDetails(id: Int, color: UIColor) {

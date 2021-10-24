@@ -1,5 +1,5 @@
 import UIKit
 
-class TableDetailsView: UIView {
+class DetailsView: UIView {
     @IBOutlet weak var descriptionLabel: UILabel!
 }

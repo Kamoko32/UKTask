@@ -2,8 +2,8 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class TableDetailsViewController: RxViewController<TableDetailsView> {
-    let viewModel = TableDetailsViewModel()
+class DetailsViewController: RxViewController<DetailsView> {
+    let viewModel = DetailsViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
