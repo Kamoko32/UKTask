@@ -1,7 +1,7 @@
 import RxSwift
 import RxCocoa
 
-class TableDetailsViewModel: ViewModel<TableViewCoordinator> {
+class DetailsViewModel: ViewModel<Coordinator> {
     let isDownloading = BehaviorRelay<Bool>(value: true)
     let description = BehaviorRelay<String>(value: "")
     let name = BehaviorRelay<String>(value: "")

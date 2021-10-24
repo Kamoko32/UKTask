@@ -14,11 +14,11 @@ class CollectionViewCoordinator: Coordinator {
         navigationController.viewControllers = [collectionViewController]
     }
 
-//    func showDetails(id: Int, color: UIColor) {
-//        let details = R.storyboard.tableDetails.tableDetailsViewController()!
-//        details.viewModel.coordinator = self
-//        details.viewModel.backgroundColor.accept(color)
-//        details.viewModel.getDetails.accept(id)
-//        navigationController.pushViewController(details, animated: true)
-//    }
+    func showDetails(id: Int, color: UIColor) {
+        let details = R.storyboard.details.detailsViewController()!
+        details.viewModel.coordinator = self
+        details.viewModel.backgroundColor.accept(color)
+        details.viewModel.getDetails.accept(id)
+        navigationController.pushViewController(details, animated: true)
+    }
 }

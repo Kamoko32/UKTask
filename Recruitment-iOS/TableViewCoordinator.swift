@@ -15,7 +15,7 @@ class TableViewCoordinator: Coordinator {
     }
 
     func showDetails(id: Int, color: UIColor) {
-        let details = R.storyboard.tableDetails.tableDetailsViewController()!
+        let details = R.storyboard.details.detailsViewController()!
         details.viewModel.coordinator = self
         details.viewModel.backgroundColor.accept(color)
         details.viewModel.getDetails.accept(id)
