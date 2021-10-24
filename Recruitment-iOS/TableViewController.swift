@@ -33,5 +33,6 @@ class TableViewController: RxViewController<TableView> {
     private func addBackButton() {
         let backButton = UIBarButtonItem(title: "Back", style: .plain, target: self, action: nil)
         navigationItem.leftBarButtonItem = backButton
+        backButton.rx.tap.bind(to: viewModel.restart).disposed(by: bag)
     }
 }

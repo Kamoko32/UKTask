@@ -25,7 +25,7 @@ class DetailsViewModel: ViewModel<Coordinator> {
             .map { name in
                 var newTitle = ""
                 for (index, letter) in name.enumerated() {
-                    newTitle += index % 2 == 0 ? letter.lowercased() : letter.uppercased()
+                    newTitle += index % 2 == 0 ? letter.uppercased() : letter.lowercased()
                 }
                 return newTitle
             }
