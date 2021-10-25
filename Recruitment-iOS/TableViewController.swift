@@ -8,7 +8,12 @@ class TableViewController: RxViewController<TableView> {
         super.viewDidLoad()
         addBackButton()
         setupBindings()
-        self.title = "List"
+        title = "Table"
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.refresh.accept(())
     }
 
     private func setupBindings() {
@@ -20,14 +25,17 @@ class TableViewController: RxViewController<TableView> {
                 cell.setup(item: item)
             }.disposed(by: bag)
 
+        viewModel.isDownloading
+            .bind(to: customView.refreshControl.rx.isRefreshing)
+            .disposed(by: bag)
+
         customView.tableView.rx.modelSelected(ItemModel.self)
             .bind(to: viewModel.showDetails)
             .disposed(by: bag)
 
-        viewModel.isDownloading.observeOnMain()
-            .subscribe(onNext: { [weak self] isDownloading in
-                isDownloading ? self?.showIndicator() : self?.hideIndicator()
-            }).disposed(by: bag)
+        customView.refreshControl.rx.controlEvent(.valueChanged)
+            .bind(to: viewModel.refresh)
+            .disposed(by: bag)
     }
 
     private func addBackButton() {

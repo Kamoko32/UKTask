@@ -8,7 +8,13 @@ target 'Recruitment-iOS' do
   pod 'Alamofire'
   pod 'R.swift'
   pod 'RxSwiftExt', '~> 5'
+end
 
+target 'Recruitment-iOSTests' do
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'RxTest'
+  pod 'RxSwiftExt', '~> 5'
 end
 
 post_install do |installer|

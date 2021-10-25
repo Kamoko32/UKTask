@@ -5,7 +5,7 @@ import RxSwift
 class StartCoordinator: Coordinator {
     private let navigationController = UINavigationController()
     private var bag = DisposeBag()
-    let window: UIWindow
+    private let window: UIWindow
 
     init(window: UIWindow) {
         self.window = window
