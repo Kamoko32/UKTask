@@ -4,13 +4,32 @@ import RxSwift
 import RxSwiftExt
 
 class TableViewModel: ViewModel<TableViewCoordinator> {
-    let isDownloading = BehaviorRelay<Bool>(value: true)
+    let isDownloading = BehaviorRelay<Bool>(value: false)
     let items = BehaviorRelay<[ItemModel]>(value: [])
+
+    let refresh = PublishRelay<Void>()
     let showDetails = PublishRelay<ItemModel>()
     let restart = PublishRelay<Void>()
 
+    var error: Error?
+
+    private let apiClient: Client
+
+    init(apiClient: Client = ApiClient.shared) {
+        self.apiClient = apiClient
+    }
+    
     override func setupBindings() {
-        let networkItems = apiClient.itemsRepository.getItems().share()
+        let networkItems = refresh
+            .flatMapLatest { [unowned self] id in
+                apiClient.itemsRepository.getItems().do(onError: { self.error = $0 }).catchErrorJustComplete()
+            }
+            .share()
+
+        refresh
+            .mapTo(true)
+            .bind(to: isDownloading)
+            .disposed(by: bag)
 
         networkItems
             .mapTo(false)

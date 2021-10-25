@@ -4,9 +4,7 @@ import UIKit
 class CollectionView: UIView {
     @IBOutlet weak var collectionView: UICollectionView!
 
-    enum Section {
-        case all
-    }
+    let refreshControl = UIRefreshControl()
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -16,6 +14,7 @@ class CollectionView: UIView {
     private func setupCollection() {
         collectionView.collectionViewLayout = createLayout()
         collectionView.register(R.nib.collectionViewCell)
+        collectionView.refreshControl = refreshControl
     }
 
     private func createLayout() -> UICollectionViewCompositionalLayout {

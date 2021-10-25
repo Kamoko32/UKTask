@@ -2,7 +2,7 @@ import XCTest
 @testable import Recruitment_iOS
 
 class ItemsMapperTest: XCTestCase {
-    var mapper: MockItemsMapper!
+    var mapper: ItemsMapper!
 
     override func setUp() {
         super.setUp()

@@ -25,7 +25,7 @@ class NetworkingTests: XCTestCase {
     func test_fetch_success() {
         let items = scheduler.createObserver(String.self)
 
-        networkingManager.runMockRequest(fileName: "Items", success: ItemsJSON.self)
+        networkingManager.runRequest(fileName: "Items", success: ItemsJSON.self)
             .subscribe({ event in
                 switch event {
                     case .next(_):
@@ -35,14 +35,14 @@ class NetworkingTests: XCTestCase {
             })
             .disposed(by: bag)
 
-        _ = XCTWaiter.wait(for: [expectation(description: "Wait for 2 seconds")], timeout: 2.0)
+        _ = XCTWaiter.wait(for: [expectation(description: "Wait for response")], timeout: 2.0)
         XCTAssertRecordedElements(items.events, ["Success"])
     }
 
     func test_fetch_error() {
         let errorMessage = scheduler.createObserver(String.self)
 
-        networkingManager.runMockRequest(fileName: "ItemsIncorrectName", success: ItemModelJSON.self)
+        networkingManager.runRequest(fileName: "ItemsIncorrectName", success: ItemModelJSON.self)
             .subscribe({ event in
                 switch event {
                     case .error(_):
@@ -52,14 +52,14 @@ class NetworkingTests: XCTestCase {
             })
             .disposed(by: bag)
 
-        _ = XCTWaiter.wait(for: [expectation(description: "Wait for 2 seconds")], timeout: 2.0)
+        _ = XCTWaiter.wait(for: [expectation(description: "Wait for response")], timeout: 2.0)
         XCTAssertRecordedElements(errorMessage.events, ["Failure"])
     }
 
     func test_fetch_no_file_with_name_error() {
         let errorMessage = scheduler.createObserver(JSONParserErrors.self)
 
-        networkingManager.runMockRequest(fileName: "ItemsIncorrectName", success: ItemsJSON.self)
+        networkingManager.runRequest(fileName: "ItemsIncorrectName", success: ItemsJSON.self)
             .subscribe({ event in
                 switch event {
                     case .error(let error):
@@ -71,14 +71,14 @@ class NetworkingTests: XCTestCase {
             })
             .disposed(by: bag)
 
-        _ = XCTWaiter.wait(for: [expectation(description: "Wait for 2 seconds")], timeout: 2.0)
+        _ = XCTWaiter.wait(for: [expectation(description: "Wait for response")], timeout: 2.0)
         XCTAssertRecordedElements(errorMessage.events, [.noFileWithName])
     }
 
     func test_fetch_parsing_error() {
         let errorMessage = scheduler.createObserver(JSONParserErrors.self)
 
-        networkingManager.runMockRequest(fileName: "Items", success: ItemModelJSON.self)
+        networkingManager.runRequest(fileName: "Items", success: ItemModelJSON.self)
             .subscribe({ event in
                 switch event {
                     case .error(let error):
@@ -90,7 +90,7 @@ class NetworkingTests: XCTestCase {
             })
             .disposed(by: bag)
 
-        _ = XCTWaiter.wait(for: [expectation(description: "Wait for 2 seconds")], timeout: 2.0)
+        _ = XCTWaiter.wait(for: [expectation(description: "Wait for response")], timeout: 2.0)
         XCTAssertRecordedElements(errorMessage.events, [.parsingError])
     }
 }

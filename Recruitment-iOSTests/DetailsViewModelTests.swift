@@ -4,18 +4,21 @@ import RxTest
 @testable import Recruitment_iOS
 
 class DetailsViewModelTests: XCTestCase {
+    var mockApiClient: MockApiClient!
     var viewModel: DetailsViewModel!
     var scheduler: TestScheduler!
     var bag: DisposeBag!
 
     override func setUp() {
         super.setUp()
-        viewModel = .init()
+        mockApiClient = MockApiClient()
+        viewModel = .init(apiClient: mockApiClient)
         scheduler = .init(initialClock: 0)
         bag = .init()
     }
 
     override func tearDown() {
+        mockApiClient = nil
         viewModel = nil
         scheduler = nil
         bag = nil
@@ -52,7 +55,6 @@ class DetailsViewModelTests: XCTestCase {
 
     func test_name_formatter() {
         var testPassed = true
-
         viewModel.getDetails.accept(1)
 
         viewModel.name
@@ -66,7 +68,26 @@ class DetailsViewModelTests: XCTestCase {
                 }
             }).disposed(by: bag)
 
-        _ = XCTWaiter.wait(for: [expectation(description: "Wait for 2 seconds")], timeout: 2.0)
         XCTAssertTrue(testPassed)
+    }
+
+    func test_get_details_with_error() {
+        (mockApiClient.itemsRepository as! MockItemsRepository).result = .failure
+
+        viewModel.getDetails.accept(1)
+        XCTAssertNotNil(viewModel.error)
+    }
+
+    func test_get_details_with_success() {
+        (mockApiClient.itemsRepository as! MockItemsRepository).result = .success
+
+        viewModel.getDetails.accept(1)
+        viewModel.backgroundColor.accept(.black)
+
+        XCTAssertEqual("MoCkNaMe", viewModel.name.value)
+        XCTAssertEqual("MockDescription", viewModel.description.value)
+        XCTAssertEqual(.black, viewModel.backgroundColor.value)
+        XCTAssertEqual(false, viewModel.isDownloading.value)
+        XCTAssertNil(viewModel.error)
     }
 }

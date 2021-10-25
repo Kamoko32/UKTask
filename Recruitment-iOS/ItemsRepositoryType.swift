@@ -1,13 +1,13 @@
 import Foundation
 import RxSwift
 
-protocol ItemsRepository {
+protocol ItemsRepositoryType {
     var mapper: ItemsMapper { get set }
     func getItems() -> Observable<[ItemModel]>
     func getItemDetails(id: Int) -> Observable<ItemDetailsModel>
 }
 
-class MockItemsRepository: Repository, ItemsRepository {
+class ItemsRepository: Repository, ItemsRepositoryType {
     var mapper: ItemsMapper
 
     init(mapper: ItemsMapper) {
@@ -15,7 +15,7 @@ class MockItemsRepository: Repository, ItemsRepository {
     }
 
     func getItems() -> Observable<[ItemModel]> {
-        networkingManager.runMockRequest(fileName: "Items", success: ItemsJSON.self)
+        networkingManager.runRequest(fileName: "Items", success: ItemsJSON.self)
             .map { [unowned self] result in
                 do { return try result.data.compactMap { try mapper.map($0) } }
                 catch let error { throw DataMapperErrors.mapError(error.localizedDescription) }
@@ -23,7 +23,7 @@ class MockItemsRepository: Repository, ItemsRepository {
     }
 
     func getItemDetails(id: Int) -> Observable<ItemDetailsModel> {
-        networkingManager.runMockRequest(fileName: "Item\(id)", success: ItemDetailsJSON.self)
+        networkingManager.runRequest(fileName: "Item\(id)", success: ItemDetailsJSON.self)
             .map { [unowned self] result in
                 do { return try mapper.mapDetails(result) }
                 catch let error { throw DataMapperErrors.mapError(error.localizedDescription) }

@@ -11,8 +11,8 @@ class TableViewCell: UITableViewCell {
     }
 
     func setup(item: ItemModel) {
-        self.titleLabel.text = item.name
-        self.previewLabel.text = item.preview
+        titleLabel.text = item.name
+        previewLabel.text = item.preview
         backgroundColor = item.color
     }
 }

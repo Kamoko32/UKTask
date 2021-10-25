@@ -1,12 +1,12 @@
 import Foundation
 import UIKit
 
-protocol ItemsMapper {
+protocol ItemsMapperType {
     func map(_ input: ItemModelJSON) throws -> ItemModel
     func mapDetails(_ input: ItemDetailsJSON) throws -> ItemDetailsModel
 }
 
-class MockItemsMapper: ItemsMapper {
+class ItemsMapper: ItemsMapperType {
     func map(_ input: ItemModelJSON) throws -> ItemModel {
         guard let intID = Int(input.id) else { throw DataMapperErrors.mapError("Couldn't format String to Int") }
         return .init(

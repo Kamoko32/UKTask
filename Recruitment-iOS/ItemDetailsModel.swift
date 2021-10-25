@@ -1,4 +1,5 @@
 import UIKit
+
 struct ItemDetailsJSON: Codable {
     let data: ItemDetailsModelJSON
 }

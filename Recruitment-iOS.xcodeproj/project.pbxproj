@@ -50,6 +50,9 @@
 		DEA4B2AC2726032D006160C0 /* CollectionViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA4B2AB2726032D006160C0 /* CollectionViewModelTests.swift */; };
 		DEA4B2AE27260385006160C0 /* DetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA4B2AD27260385006160C0 /* DetailsViewModelTests.swift */; };
 		DEA4B2B02726151B006160C0 /* ItemsMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA4B2AF2726151B006160C0 /* ItemsMapperTests.swift */; };
+		DEA4B2B327269FEC006160C0 /* MockItemsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA4B2B227269FEC006160C0 /* MockItemsRepository.swift */; };
+		DEA4B2B52726A128006160C0 /* MockApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA4B2B42726A128006160C0 /* MockApiClient.swift */; };
+		DEA4B2BB2726C0E4006160C0 /* Rx+UIRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA4B2BA2726C0E4006160C0 /* Rx+UIRefreshControl.swift */; };
 		DEB6FB992724F28900E3A780 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB6FB982724F28900E3A780 /* TableViewCell.swift */; };
 		DEB6FB9B2724F2AB00E3A780 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEB6FB9A2724F2AB00E3A780 /* TableViewCell.xib */; };
 		DEF1EFCD27246F5A003A26DD /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF1EFCC27246F5A003A26DD /* R.generated.swift */; };
@@ -58,7 +61,7 @@
 		DEF1EFD827248313003A26DD /* RxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF1EFD727248313003A26DD /* RxView.swift */; };
 		DEF1EFDA2724831F003A26DD /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF1EFD92724831F003A26DD /* ViewModel.swift */; };
 		DEF1EFDF2724838C003A26DD /* Observable+Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF1EFDE2724838C003A26DD /* Observable+Queue.swift */; };
-		DEF1EFE527248DF3003A26DD /* ItemsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF1EFE427248DF3003A26DD /* ItemsRepository.swift */; };
+		DEF1EFE527248DF3003A26DD /* ItemsRepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF1EFE427248DF3003A26DD /* ItemsRepositoryType.swift */; };
 		DEF1EFE827248EA6003A26DD /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF1EFE727248EA6003A26DD /* Repository.swift */; };
 		DEF1EFEB27249A0C003A26DD /* ItemsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF1EFEA27249A0C003A26DD /* ItemsMapper.swift */; };
 		DEF1EFED27249B2F003A26DD /* DataMapperError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF1EFEC27249B2F003A26DD /* DataMapperError.swift */; };
@@ -133,6 +136,9 @@
 		DEA4B2AB2726032D006160C0 /* CollectionViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewModelTests.swift; sourceTree = "<group>"; };
 		DEA4B2AD27260385006160C0 /* DetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModelTests.swift; sourceTree = "<group>"; };
 		DEA4B2AF2726151B006160C0 /* ItemsMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsMapperTests.swift; sourceTree = "<group>"; };
+		DEA4B2B227269FEC006160C0 /* MockItemsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockItemsRepository.swift; sourceTree = "<group>"; };
+		DEA4B2B42726A128006160C0 /* MockApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockApiClient.swift; sourceTree = "<group>"; };
+		DEA4B2BA2726C0E4006160C0 /* Rx+UIRefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+UIRefreshControl.swift"; sourceTree = "<group>"; };
 		DEB6FB982724F28900E3A780 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		DEB6FB9A2724F2AB00E3A780 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		DEF1EFCC27246F5A003A26DD /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = R.generated.swift; path = Generated/R.generated.swift; sourceTree = "<group>"; };
@@ -141,7 +147,7 @@
 		DEF1EFD727248313003A26DD /* RxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxView.swift; sourceTree = "<group>"; };
 		DEF1EFD92724831F003A26DD /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		DEF1EFDE2724838C003A26DD /* Observable+Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Queue.swift"; sourceTree = "<group>"; };
-		DEF1EFE427248DF3003A26DD /* ItemsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsRepository.swift; sourceTree = "<group>"; };
+		DEF1EFE427248DF3003A26DD /* ItemsRepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsRepositoryType.swift; sourceTree = "<group>"; };
 		DEF1EFE727248EA6003A26DD /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		DEF1EFEA27249A0C003A26DD /* ItemsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsMapper.swift; sourceTree = "<group>"; };
 		DEF1EFEC27249B2F003A26DD /* DataMapperError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMapperError.swift; sourceTree = "<group>"; };
@@ -256,6 +262,7 @@
 		DE259ADC2725A432000E2694 /* Recruitment-iOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				DEA4B2B127269FD5006160C0 /* Mocks */,
 				DE259ADD2725A432000E2694 /* NetworkingTests.swift */,
 				DEA4B2A9272600DB006160C0 /* TableViewModelTests.swift */,
 				DEA4B2AB2726032D006160C0 /* CollectionViewModelTests.swift */,
@@ -330,6 +337,15 @@
 			name = Cell;
 			sourceTree = "<group>";
 		};
+		DEA4B2B127269FD5006160C0 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				DEA4B2B42726A128006160C0 /* MockApiClient.swift */,
+				DEA4B2B227269FEC006160C0 /* MockItemsRepository.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		DEF1EFC927246DA9003A26DD /* Generated */ = {
 			isa = PBXGroup;
 			children = (
@@ -355,6 +371,7 @@
 				DEF1EFDE2724838C003A26DD /* Observable+Queue.swift */,
 				DE259AD327258935000E2694 /* Coordinator+Restart.swift */,
 				DE259AD52725898F000E2694 /* NotificationName+Restart.swift */,
+				DEA4B2BA2726C0E4006160C0 /* Rx+UIRefreshControl.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -389,7 +406,7 @@
 		DEF1EFE327248DD5003A26DD /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				DEF1EFE427248DF3003A26DD /* ItemsRepository.swift */,
+				DEF1EFE427248DF3003A26DD /* ItemsRepositoryType.swift */,
 			);
 			name = Repositories;
 			sourceTree = "<group>";
@@ -699,6 +716,7 @@
 				DE5F01592724BCDF004A6E11 /* CollectionViewCoordinator.swift in Sources */,
 				DEF1EFF62724B00F003A26DD /* StartView.swift in Sources */,
 				DEF1EFDF2724838C003A26DD /* Observable+Queue.swift in Sources */,
+				DEA4B2BB2726C0E4006160C0 /* Rx+UIRefreshControl.swift in Sources */,
 				DEF1EFFE2724B0A5003A26DD /* StartCoordinator.swift in Sources */,
 				DE259AD62725898F000E2694 /* NotificationName+Restart.swift in Sources */,
 				DE259AD427258935000E2694 /* Coordinator+Restart.swift in Sources */,
@@ -723,7 +741,7 @@
 				A4802C531D8ACB840032AF25 /* ItemDetailsModel.swift in Sources */,
 				DEF1EFED27249B2F003A26DD /* DataMapperError.swift in Sources */,
 				DE5F01522724BBE3004A6E11 /* TableViewTabCoordinator.swift in Sources */,
-				DEF1EFE527248DF3003A26DD /* ItemsRepository.swift in Sources */,
+				DEF1EFE527248DF3003A26DD /* ItemsRepositoryType.swift in Sources */,
 				DE5F01562724BC83004A6E11 /* TableViewCoordinator.swift in Sources */,
 				A4802C501D8ACB840032AF25 /* ItemModel.swift in Sources */,
 				DEF1EFD827248313003A26DD /* RxView.swift in Sources */,
@@ -738,11 +756,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEA4B2B327269FEC006160C0 /* MockItemsRepository.swift in Sources */,
 				DE259ADE2725A432000E2694 /* NetworkingTests.swift in Sources */,
 				DEA4B2AC2726032D006160C0 /* CollectionViewModelTests.swift in Sources */,
 				DEA4B2B02726151B006160C0 /* ItemsMapperTests.swift in Sources */,
 				DEA4B2AA272600DB006160C0 /* TableViewModelTests.swift in Sources */,
 				DEA4B2AE27260385006160C0 /* DetailsViewModelTests.swift in Sources */,
+				DEA4B2B52726A128006160C0 /* MockApiClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
